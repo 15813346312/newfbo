@@ -1,0 +1,86 @@
+/**index.wxss**/
+page {
+  background-color: #F8F8F8;
+}
+
+.mytab {
+  color: #63656A;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.mytab .tab {
+  padding: 10px 0;
+}
+
+.mytab .active {
+  color: #333FB2;
+  border-bottom: 4px solid #333FB2;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #64676C;
+  padding: 20rpx 30rpx;
+}
+
+.my-cell {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 20rpx 0;
+  margin: 0 20rpx 10rpx 20rpx;
+}
+
+.my-cell .parameter {
+  flex: 3;
+  text-align: center;
+}
+
+.my-cell .input-view {
+  flex: 5;
+  border-bottom: 1px solid #B4B4B6;
+}
+
+.my-cell .no-border {
+  border: none;
+}
+
+.my-cell .unit {
+  flex: 2;
+  padding-left: 20rpx;
+}
+
+.pressure {
+  opacity: 0.6;
+}
+
+.more-info {
+  padding: 20rpx 0;
+  margin: 0 10rpx;
+  color: #6B6D73;
+  font-size: 22rpx;
+  box-sizing: border-box;
+  background-color: #D3DBED;
+  border-radius: 0 0 40rpx 40rpx;
+}
+
+.my-cell-unit {
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+}
+
+.unit-select {
+  flex: 2;
+}
+
+.input-view-unit {
+  flex: 2;
+  padding-right: 20rpx;
+}
+
+.input-view-unit input {
+  border-bottom: 1px solid #B4B4B6;
+}

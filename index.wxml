@@ -1,0 +1,197 @@
+<!-- sitemapLocation指明 sitemap.json 的位置,必填 -->
+
+
+<!--index.wxml-->
+<view class="flex-row m-around mytab">
+<!-- 函数传参，传的是wx：for里的index，可以改变active的名字，然后active的名字出现在事件中的currentTarget的dataset中 -->
+<!-- 这里用的是view而不是block，因为block是没有class的 -->
+  <view class="tab {{active==index?'active':''}}" wx:for="{{myTab}}" data-active="{{index}}" bindtap="changeTab">
+    {{item}}
+  </view>
+</view>
+<!--点击就会改变active，然后block展示的active，其实就只有一个页面，就是谁展示的问题  -->
+<block wx:if="{{active==0}}">
+  <view class="desc">输入容积，时间和压降来计算泄漏率</view>
+  <!-- 每一个大view分成三大部分子级，分别占比3,5,2 -->
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">容积</text>
+    <view class="input-view">
+    <!-- 设置hold-keyboard属性来保持键盘不收起,focus时，点击页面的时候不收起键盘.digit：数字键盘（有小数点） -->
+    <!-- data-name，传参，也就是name = volume -->
+      <input placeholder="请输入参数" type="digit" value="{{result[0].volume}}" data-name="volume" bindinput="bindInput"
+        hold-keyboard="{{true}}" focus="auto" class="input-autoFocus" />
+    </view>
+    <text class="unit">cc</text>
+  </view>
+
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">时间</text>
+    <view class="input-view">
+    <!-- 是怎么让有些空是有值，在data里创建一个数组，数组有四个对象，分别对应标签栏四个，有些设定不同固定值，然后value取值。 -->
+      <input placeholder="请输入参数" type="digit" value="{{result[0].time}}" data-name="time" bindinput="bindInput"
+        hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">secs</text>
+  </view>
+
+  <view class="my-cell flex-row s-center pressure">
+    <text class="parameter">压力</text>
+    <view class="input-view no-border">
+      101.3
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">压降</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[0].pressureDrop}}" data-name="pressureDrop"
+        bindinput="bindInput" hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">泄漏率LR =</text>
+    <view class="input-view no-border">
+      <block>{{result[0].leakRate}}</block>
+    </view>
+    <text class="unit">scc/m</text>
+  </view>
+</block>
+
+<block wx:if="{{active==1}}">
+  <view class="desc">输入泄漏率，时间和压降来计算容积</view>
+
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">泄漏率</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[1].leakRate}}" data-name="leakRate" bindinput="bindInput"
+        hold-keyboard="{{true}}" focus="auto" />
+    </view>
+    <text class="unit">scc/m</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">时间</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[1].time}}" data-name="time" bindinput="bindInput"
+        hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">secs</text>
+  </view>
+  <view class="my-cell flex-row s-center pressure">
+    <text class="parameter">压力</text>
+    <view class="input-view no-border">
+      101.3
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">压降</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[1].pressureDrop}}" data-name="pressureDrop"
+        bindinput="bindInput" hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">容积V =</text>
+    <view class="input-view no-border">
+      <block>{{result[1].volume}}</block>
+    </view>
+    <text class="unit">cc</text>
+  </view>
+</block>
+
+<block wx:if="{{active==2}}">
+  <view class="desc">输入泄漏率，容积和压降来计算时间</view>
+
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">泄漏率</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[2].leakRate}}" data-name="leakRate" bindinput="bindInput"
+        hold-keyboard="{{true}}" focus="auto" />
+    </view>
+    <text class="unit">scc/m</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">容积</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[2].volume}}" data-name="volume" bindinput="bindInput"
+        hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">cc</text>
+  </view>
+  <view class="my-cell flex-row s-center pressure">
+    <text class="parameter">压力</text>
+    <view class="input-view no-border">
+      101.3
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">压降</text>
+    <view class="input-view">
+      <input placeholder="请输入参数" type="digit" value="{{result[2].pressureDrop}}" data-name="pressureDrop"
+        bindinput="bindInput" hold-keyboard="{{true}}" />
+    </view>
+    <text class="unit">Kpa</text>
+  </view>
+  <view class="my-cell flex-row s-center">
+    <text class="parameter">时间T =</text>
+    <view class="input-view no-border">
+      <block>{{result[2].time}}</block>
+    </view>
+    <text class="unit">secs</text>
+  </view>
+</block>
+
+<block wx:if="{{active==3}}">
+
+  <view class="my-cell-unit flex-row s-center">
+
+    <view class="input-view-unit">
+      <input placeholder="请输入参数" type="digit" value="{{automatic}}" data-name="pressureDrop" bindinput="bindInput"
+        focus="auto" hold-keyboard="{{true}}" />
+    </view>
+
+    <view class="unit-select flex-grow-1 flex-row s-center">
+      <text>{{units[unit1]}}</text><text> =</text>
+    </view>
+
+    <view class="input-view-unit">
+      {{conversion}}
+    </view>
+
+    <view class="unit-select" style="flex:1;">
+      {{units[unit2]}}
+    </view>
+
+  </view>
+
+  <view style="color:#6A6C71;font-size:28rpx;padding:0 20rpx;">上下滑动选择换算单位</view>
+  <!-- ！！！！必须有高度才会出来 -->
+  <picker-view mask-style="background:rgba(0,0,0,0);" indicator-style="height:50px;" style="width: 100%; height: 250px;"
+    value="{{value}}" bindchange="bindChange">
+
+    <picker-view-column>
+      <view style="line-height: 50px;"></view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{units}}" wx:key="{{units}}"
+        style="line-height: 50px; text-align: center;{{unit1==index?'color:#333FB2;':''}}">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view style="line-height: 50px;"></view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{units}}" wx:key="{{units}}"
+        style="line-height: 50px; text-align: center;{{unit2==index?'color:#333FB2;':''}}">{{item}}</view>
+    </picker-view-column>
+
+  </picker-view>
+</block>
+<!-- 文本的修饰,下划线 -->
+<view class="more-info flex-row s-center m-center">通过单击以下链接，您可以<view bindtap="showAbout" url="../info/index"
+    style="text-decoration:underline;">了解有关 <text style="color:#2526A4;">FBO</text> 的更多信息</view>。</view>
