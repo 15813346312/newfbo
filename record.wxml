@@ -1,0 +1,2 @@
+"style": "v2"表示启用新版的组件样式。
+"sitemapLocation": "sitemap.json"主要是设置是否允许微信能否搜索小程序内的页面

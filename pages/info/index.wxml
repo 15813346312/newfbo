@@ -1,0 +1,43 @@
+<!--pages/info/index.wxml-->
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/1.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/2.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/3.png" bindtap="goto"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/4.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/5.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/5_1.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/11.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/11.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/5_2.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/12.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/12.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/5_3.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/13.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/13.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/6-0.png"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/6.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/6.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/7.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/7.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/8.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/8.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/9.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/9.png" bindtap="previewImage"></image>
+<image style="width:100%;display:block;" mode="widthFix"
+  src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/10.png"
+  data-src="cloud://fbo-7gjvko0jd60de06b.6662-fbo-7gjvko0jd60de06b-1304540258/10.png" bindtap="previewImage"></image>
